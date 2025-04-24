@@ -45,5 +45,11 @@ export class Book extends Model {
     })
     isbn: string;
 
+    @Column({
+        type: DataType.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    })
+    available: boolean;
 
 }
