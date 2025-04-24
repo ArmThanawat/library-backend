@@ -6,8 +6,8 @@ import { BooksModule } from './books/books.module';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Dialect } from 'sequelize';
-import { LibrarianModule } from './librarian/librarian.module';
 import { Book } from './books/entities/book.entity';
+
 
 @Module({
   imports: [
@@ -22,9 +22,9 @@ import { Book } from './books/entities/book.entity';
       models: [Book],
       autoLoadModels: true,
       sync: { alter: true },
+      // sync: { force: true }, 
     }),
     BooksModule,
-    LibrarianModule,
   ],
   controllers: [AppController],
   providers: [AppService],

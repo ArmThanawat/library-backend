@@ -4,7 +4,7 @@ import { AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from 'seque
 
 @Table({
     tableName: 'books',
-    timestamps: true,
+    timestamps: false,
 })
 export class Book extends Model {
     @PrimaryKey
@@ -44,4 +44,6 @@ export class Book extends Model {
         allowNull: false,
     })
     isbn: string;
+
+
 }

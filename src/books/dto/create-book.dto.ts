@@ -5,4 +5,5 @@ export class CreateBookDto {
     genre: string;
     description: string;
     isbn: string;
+    available: boolean;
 }
