@@ -7,6 +7,11 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Dialect } from 'sequelize';
 import { Book } from './books/entities/book.entity';
+import { AuthModule } from './auth/auth.module';
+import { MembersModule } from './members/members.module';
+import { LibrariansModule } from './librarians/librarians.module';
+import { Member } from './members/entities/member.entity';
+import { Librarian } from './librarians/entities/librarian.entity';
 
 
 @Module({
@@ -19,12 +24,19 @@ import { Book } from './books/entities/book.entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      models: [Book],
+      models: [
+        Book,
+        Member,
+        Librarian,
+      ],
       autoLoadModels: true,
       sync: { alter: true },
       // sync: { force: true }, 
     }),
     BooksModule,
+    AuthModule,
+    MembersModule,
+    LibrariansModule,
   ],
   controllers: [AppController],
   providers: [AppService],
