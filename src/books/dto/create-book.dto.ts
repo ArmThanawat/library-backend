@@ -6,4 +6,5 @@ export class CreateBookDto {
     description: string;
     isbn: string;
     available: boolean;
+    image: string;
 }

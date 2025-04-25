@@ -16,19 +16,19 @@ export class Book extends Model {
     book_id: number;
 
     @Column({
-        type: DataType.STRING(50),
+        type: DataType.STRING,
         allowNull: false
     })
     title: string;
 
     @Column({
-        type: DataType.STRING(50),
+        type: DataType.STRING,
         allowNull: false,
     })
     author: string;
 
     @Column({
-        type: DataType.STRING(20),
+        type: DataType.STRING,
         allowNull: false,
     })
     genre: string;
@@ -40,7 +40,7 @@ export class Book extends Model {
     description: string;
 
     @Column({
-        type: DataType.STRING(13),
+        type: DataType.STRING(50),
         allowNull: false,
     })
     isbn: string;
@@ -52,4 +52,10 @@ export class Book extends Model {
     })
     available: boolean;
 
+    @Column({
+        type: DataType.STRING,
+        allowNull: true,
+        comment: 'URL or base64 string of the book cover image',
+    })
+    image: string;
 }

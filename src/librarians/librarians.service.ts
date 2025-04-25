@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable } from '@nestjs/common';
 import { CreateLibrarianDto } from './dto/create-librarian.dto';
 import { UpdateLibrarianDto } from './dto/update-librarian.dto';

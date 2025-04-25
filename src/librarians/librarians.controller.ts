@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { LibrariansService } from './librarians.service';
 import { CreateLibrarianDto } from './dto/create-librarian.dto';
 import { UpdateLibrarianDto } from './dto/update-librarian.dto';
@@ -23,7 +31,10 @@ export class LibrariansController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateLibrarianDto: UpdateLibrarianDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateLibrarianDto: UpdateLibrarianDto,
+  ) {
     return this.librariansService.update(+id, updateLibrarianDto);
   }
 
